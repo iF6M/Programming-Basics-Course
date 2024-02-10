@@ -1,13 +1,17 @@
-#include "store.cpp"
+// offer.h
+#ifndef OFFER_H
+#define OFFER_H
 
-class offer{
+#include "store.h"
+
+class Offer{
       private:
             int id;
             string storeName;
             string description;
             int startDate;
             int endDate;
-            int storeId;
+            Store associatedStore;
       public:
             void setId(int id){
                   this->id = id;
@@ -39,11 +43,11 @@ class offer{
             int getEndDate(){
                   return endDate;
             }
-            void setStoreId(int storeId){
-                  this->storeId = storeId;
+            void setAssociatedStore(const Store& store) {
+                  associatedStore = store;
             }
-            int getStoreId(){
-                  return storeId;
+            const Store& getAssociatedStore() const {
+                  return associatedStore;
             }
             void print(){
                   cout << "ID: " << id << endl;
@@ -51,6 +55,7 @@ class offer{
                   cout << "Description: " << description << endl;
                   cout << "Start Date: " << startDate << endl;
                   cout << "End Date: " << endDate << endl;
-                  cout << "Store ID: " << storeId << endl;
+                  associatedStore.print();
             }
 };
+#endif // OFFER_H

@@ -1,7 +1,12 @@
+// base.h
+#ifndef BASE_H
+#define BASE_H
+
 #include <iostream>
+#include <string>
 using namespace std;
 
-class base{
+class Base{
       private:
             int id;
             string name;
@@ -39,3 +44,4 @@ class base{
                   cout << "Password: " << password << endl;
             }
 };
+#endif // BASE_H
